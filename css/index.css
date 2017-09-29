@@ -1,3 +1,6 @@
-.flex{
-  display: flex;
+.mask{
+  background: rgba(0,0,0,.8);
+}
+.l{
+  float: left;
 }

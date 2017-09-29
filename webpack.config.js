@@ -12,6 +12,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            scss: 'style!css!sass'
+          },
+          extractCSS: true
+        }
+      }, {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -19,6 +28,12 @@ module.exports = {
         })
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    },
+    extensions: ['.js', '.vue'],
   },
   plugins: [
     new ExtractTextPlugin("index.css")
